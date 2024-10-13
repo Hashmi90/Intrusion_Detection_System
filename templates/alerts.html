@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Intrusion Detection System - Alerts</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 20px;
+        }
+        h1 {
+            color: #333;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+        th, td {
+            padding: 10px;
+            border: 1px solid #ddd;
+            text-align: left;
+        }
+        th {
+            background-color: #4CAF50;
+            color: white;
+        }
+        tr:hover {
+            background-color: #f1f1f1;
+        }
+    </style>
+</head>
+<body>
+    <h1>Detected Suspicious Activities</h1>
+    <table>
+        <tr>
+            <th>Source IP</th>
+            <th>Destination IP</th>
+            <th>Status</th>
+        </tr>
+        {% for alert in alerts %}
+        <tr>
+            <td>{{ alert.source }}</td>
+            <td>{{ alert.destination }}</td>
+            <td>{{ alert.status }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+</body>
+</html>
